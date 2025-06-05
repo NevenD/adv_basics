@@ -12,10 +12,17 @@ class QuestionsSummary extends StatelessWidget {
         return Row(
           children: [
             Text(((data['question_index'] as int) + 1).toString()),
-            const SizedBox(width: 10),
-            Text(data['correct_answer'] as String),
-            const SizedBox(width: 10),
-            Text(data['user_answer'] as String),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(data['question'] as String),
+                  const SizedBox(height: 5),
+                  Text('Your answer: ${data['user_answer'] as String}'),
+                  Text('Correct answer: ${data['correct_answer'] as String}'),
+                ],
+              ),
+            ),
           ],
         );
       }).toList(),
