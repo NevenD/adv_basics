@@ -30,7 +30,9 @@ class ResultsScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('dwaaw'),
+            Text(
+              'You answered ${choosenAnswers.length} out of ${questions.length} questions!',
+            ),
             SizedBox(height: 30),
             Text('List of answers and questions...'),
             SizedBox(height: 30),
